@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Detalle del Juego</title>
+</head>
+<body>
+
+    <div data-role="page">
+        <div data-role="header" style="background-color: blueviolet; color: aliceblue;">
+            <h1>Detalle del Juego</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="game-container">
+                <img src="<%= game.image %>" alt="<%= game.title %>">
+                <h2><%= game.title %></h2>
+                <p><%= game.description %></p>
+                <div class="price">$<%= game.price.toFixed(2) %></div>
+                <p>Plataforma: <%= game.platform %></p>
+                <p>Fecha de lanzamiento: <%= game.releaseDate %></p>
+                <p>Género: <%= game.genre %></p>
+                <a href="#" class="buy-button" data-role="button" data-theme="b" style="background-color: blueviolet;">Comprar</a>
+                <a href="delete/<%= game.title %>" class="buy-button" data-role="button" data-theme="b" style="background-color: rgb(236, 9, 9);">Eliminar</a>
+               
+
+            </div>
+        </div>
+
+        <form action="<%= game.title%>" method="POST">
+          
+            <label for="text_title">Título del Juego:</label>
+            <input type="text" name="title" id="text_title" placeholder="Título del Juego" value="<%= game.title %>">
+
+            <label for="text_platform">Plataforma:</label>
+            <input type="text" name="platform" id="text_platform" placeholder="Plataforma" value="<%= game.platform %>">
+
+            <label for="text_genre">Género:</label>
+            <input type="text" name="genre" id="text_genre" placeholder="Género" value="<%= game.genre %>">
+
+            <label for="date_release">Fecha de Lanzamiento:</label>
+            <input type="date" name="releaseDate" id="date_release" data-role="date" data-inline="true" value="<%= game.releaseDate %>">
+
+            <label for="text_price">Precio:</label>
+            <input type="text" name="price" id="text_price" placeholder="Precio" value="<%= game.price %>">
+
+            <label for="number_stock">Existencia:</label>
+            <input type="number" name="stock" id="number_stock" placeholder="Existencia" value="<%= game.stock %>">
+
+            <button type="submit">Guardar</button>
+        </form>
+
+        <div data-role="footer" style="background-color: blueviolet; color: aliceblue;">
+            <h5>Desarrollado por MR.Vargas</h5>
+        </div>
+    </div>
+
+</body>
+</html>

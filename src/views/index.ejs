@@ -1,0 +1,159 @@
+<!-- views/games.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Agrega tus estilos aquí */
+     
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #9405aa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-content {
+            margin: 20px;
+        }
+
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .game {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .game img {
+            width: 100%;
+            height: auto;
+        }
+
+        .game-details {
+            padding: 10px;
+        }
+
+        .game-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .game-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            color: rgb(4, 102, 40);
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ab09ba;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+    <title>Tienda de Videojuegos</title>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header" style="background-color: #9405aa; color: #fff;">
+            <h1>Eneba</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home" style="background-color: #9405aa; color: #fff;">Inicio</a></li>
+                    <li><a href="#" data-icon="tag" class="ui-btn-active" style="background-color: #9405aa; color: #fff;">Juegos</a></li>
+                    <li><a href="#" data-icon="user" style="background-color: #9405aa; color: #fff;">Usuarios</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-content">
+            <div> <img src="src/img/WhatsApp Image 2024-01-25 at 22.27.02_8015ba4a.jpg" alt=""></div>
+            
+            <div class="game-container">
+                <% games.forEach((game) => { %>
+                <div class="game">
+                    <img src="<%= game.image %>" alt="<%= game.title %>">
+                    <div class="game-details">
+                        <h2 class="game-title"><%= game.title %></h2>
+                        <p class="game-description"><%= game.description %></p>
+                        <p>Plataforma: <%= game.platform %></p>
+                        <div class="price">$<%= game.price.toFixed(2) %></div>
+                        <a href="/eneba/games/<%= game.title %>" class="buy-button" style="background-color: #9405aa; color: #ddd; width: 100px;">Comprar</a>
+                        
+
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+
+            <form action="/eneba/games" method="POST">
+                <div data-role="content">
+    
+                    <label for="text_title">Título del Juego:</label>
+                    <input type="text" name="title" id="text_title" placeholder="Título del Juego" value="">
+    
+                    <label for="text_platform">Plataforma:</label>
+                    <input type="text" name="platform" id="text_platform" placeholder="Plataforma" value="">
+    
+                    <label for="text_genre">Género:</label>
+                    <input type="text" name="genre" id="text_genre" placeholder="Género" value="">
+    
+                    <label for="date_release">Fecha de Lanzamiento:</label>
+                    <input type="date" name="releaseDate" id="date_release" data-role="date" data-inline="true">
+    
+                    <label for="text_price">Precio:</label>
+                    <input type="text" name="price" id="text_price" placeholder="Precio" value="">
+    
+                    <label for="number_stock">Existencia:</label>
+                    <input type="number" name="stock" id="number_stock" placeholder="Existencia" value="">
+    
+                    <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
+    
+                </div>
+            </form>
+                        
+        </div>
+        <div data-role="footer" class="footer" style="background-color: rebeccapurple; color: #fff;">
+            <h5>Desarrollado por MR.Vargas</h5>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Tienda de Videojuegos</title>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Tienda de Videojuegos</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home">Inicio</a></li>
+                    <li><a href="#" data-icon="tag" class="ui-btn-active">Videojuegos</a></li>
+                    <li><a href="#" data-icon="user">Usuarios</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form action="/games" method="POST">
+            <div data-role="content">
+
+                <label for="text_title">Título del Juego:</label>
+                <input type="text" name="title" id="text_title" placeholder="Título del Juego" value="">
+
+                <label for="text_platform">Plataforma:</label>
+                <input type="text" name="platform" id="text_platform" placeholder="Plataforma" value="">
+
+                <label for="text_genre">Género:</label>
+                <input type="text" name="genre" id="text_genre" placeholder="Género" value="">
+
+                <label for="date_release">Fecha de Lanzamiento:</label>
+                <input type="date" name="releaseDate" id="date_release" data-role="date" data-inline="true">
+
+                <label for="text_price">Precio:</label>
+                <input type="text" name="price" id="text_price" placeholder="Precio" value="">
+
+                <label for="number_stock">Existencia:</label>
+                <input type="number" name="stock" id="number_stock" placeholder="Existencia" value="">
+
+                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
+
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

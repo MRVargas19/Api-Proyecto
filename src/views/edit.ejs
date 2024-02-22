@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tus metadatos y enlaces a bibliotecas aquí -->
+    <title>Editar Juego</title>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" style="overflow:hidden;">
+            <h1>Editar Juego</h1>
+        </div>
+        <div data-role="content">
+            <form action="/games/<%= gameId %>" method="POST">
+                <!-- Agregar un campo oculto para almacenar el ID del juego -->
+                <input type="hidden" name="gameId" value="<%= gameId %>">
+
+                <label for="text_title">Título del Juego:</label>
+                <input type="text" name="title" id="text_title" placeholder="Título del Juego" value="<%= game.title %>">
+
+                <label for="text_platform">Plataforma:</label>
+                <input type="text" name="platform" id="text_platform" placeholder="Plataforma" value="<%= game.platform %>">
+
+                <label for="text_genre">Género:</label>
+                <input type="text" name="genre" id="text_genre" placeholder="Género" value="<%= game.genre %>">
+
+                <label for="date_release">Fecha de Lanzamiento:</label>
+                <input type="date" name="releaseDate" id="date_release" data-role="date" data-inline="true" value="<%= game.releaseDate %>">
+
+                <label for="text_price">Precio:</label>
+                <input type="text" name="price" id="text_price" placeholder="Precio" value="<%= game.price %>">
+
+                <label for="number_stock">Existencia:</label>
+                <input type="number" name="stock" id="number_stock" placeholder="Existencia" value="<%= game.stock %>">
+
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <h5>Developed by MR.Vargas</h5>
+        </div>
+    </div>
+</body>
+</html>
