@@ -118,7 +118,7 @@
                         <p class="game-description"><%= game.description %></p>
                         <p>Plataforma: <%= game.platform %></p>
                         <div class="price">$<%= game.price.toFixed(2) %></div>
-                        <a href="/eneba/games/<%= game.title %>" class="buy-button" style="background-color: #9405aa; color: #ddd; width: 100px;">Comprar</a>
+                        <a href="/<%= game.title %>" class="buy-button" style="background-color: #9405aa; color: #ddd; width: 100px;">Comprar</a>
                         
 
                     </div>
@@ -126,7 +126,7 @@
                 <% }) %>
             </div>
 
-            <form action="/eneba/games" method="POST">
+            <form action="/" method="POST">
                 <div data-role="content">
     
                     <label for="text_title">Título del Juego:</label>

@@ -17,14 +17,14 @@ export const getOne = (req, res) => {
 export const insertOne = (req, res) => {
   const game = req.body;
   gameDAO.insertOne(game)
-    .then(result => res.redirect('/eneba/games'))  // Redirige a la pantalla principal
+    .then(result => res.redirect('/'))  // Redirige a la pantalla principal
     .catch(err => res.status(500).send('Server unavailable'));
 };
 
 
 export const deleteOne = (req, res) => {
   gameDAO.deleteOne(req.params.title)
-    .then(result => res.redirect('/eneba/games'))  // Redirige a la página principal (ajusta la ruta según tu estructura)
+    .then(result => res.redirect('/'))  // Redirige a la página principal (ajusta la ruta según tu estructura)
     .catch(err => res.status(500).send('Server unavailable'));
 };
 
@@ -33,7 +33,7 @@ export const deleteOne = (req, res) => {
 export const updateOne=(req,res)=>{
   console.log(req.body)
   gameDAO.updateOne(req.params.title, req.body)
-  .then(result=>res.redirect('/eneba/games'))
+  .then(result=>res.redirect('/'))
   .catch(err=>res.json({status: "Server unavaliable =/"}));
 }
 

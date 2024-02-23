@@ -10,7 +10,7 @@
             <h1>Editar Juego</h1>
         </div>
         <div data-role="content">
-            <form action="/games/<%= gameId %>" method="POST">
+            <form action="/<%= gameId %>" method="POST">
                 <!-- Agregar un campo oculto para almacenar el ID del juego -->
                 <input type="hidden" name="gameId" value="<%= gameId %>">
 
