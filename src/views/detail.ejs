@@ -16,15 +16,15 @@
         </div>
 
         <div data-role="content">
-            <div class="game-container">
-                <img src="<%= game.image %>" alt="<%= game.title %>">
+            <div class="game-container" style="line-height: 10vh; text-align: center;">
+                <img src="https://cdn-products.eneba.com/resized-products/VsRRqnxJZKEwXL5lje5YfbSMzjb0XoguoLghQQn8kwg_350x200_1x-0.jpeg" alt="<%= game.title %>">
                 <h2><%= game.title %></h2>
                 <p><%= game.description %></p>
                 <div class="price">$<%= game.price.toFixed(2) %></div>
                 <p>Plataforma: <%= game.platform %></p>
                 <p>Fecha de lanzamiento: <%= game.releaseDate %></p>
                 <p>Género: <%= game.genre %></p>
-                <a href="#" class="buy-button" data-role="button" data-theme="b" style="background-color: blueviolet;">Comprar</a>
+                <a href="/eneba/games/happy/<%= game.title %>" class="buy-button" data-role="button" data-theme="b" style="background-color: blueviolet;">Comprar</a>
                 <a href="delete/<%= game.title %>" class="buy-button" data-role="button" data-theme="b" style="background-color: rgb(236, 9, 9);">Eliminar</a>
                
 

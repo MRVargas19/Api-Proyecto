@@ -36,3 +36,13 @@ export const updateOne=(req,res)=>{
   .then(result=>res.redirect('/eneba/games'))
   .catch(err=>res.json({status: "Server unavaliable =/"}));
 }
+
+
+
+export const final = (req, res) => {
+  gameDAO.getOne(req.params.title)
+    .then(game => {
+      !game ? res.status(404).send('Game not found') : res.render('../src/views/happy', { game });  // Renderiza la vista 'detail.ejs' con los datos
+    })
+    .catch(err => res.status(500).send('Server unavailable'));
+};

@@ -24,4 +24,8 @@ gameDAO.insertOne = async (game) => {
   return await Game.create(game);
 };
 
+gameDAO.final = async (title) => {
+  const game = await Game.findOne({ title: title });
+  return game;
+};
 export default gameDAO;

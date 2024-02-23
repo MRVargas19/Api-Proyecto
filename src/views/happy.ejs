@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicidades por tu Compra</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #6408c5;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Felicidades por tu Compra</h1>
+        <h2 style="color: blueviolet;"><%= game.title %></h2>
+        <p>¡Gracias por adquirir el juego! Esperamos que lo disfrutes al máximo.</p>
+        <img src="https://cdn-products.eneba.com/resized-products/VsRRqnxJZKEwXL5lje5YfbSMzjb0XoguoLghQQn8kwg_350x200_1x-0.jpeg" alt="Felicidades">
+    </div>
+
+    <a href="/eneba/games/" class="buy-button" data-role="button" data-theme="b" style="background-color: blueviolet; color: beige;">Comprar</a>
+    <div data-role="footer" style="background-color: blueviolet; color: aliceblue;">
+        <h5>Desarrollado por MR.Vargas</h5>
+    </div>
+</body>
+</html>

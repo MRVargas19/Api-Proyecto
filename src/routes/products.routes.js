@@ -4,7 +4,7 @@ import {
   getOne,
   insertOne,
   updateOne,
-  deleteOne
+  deleteOne,final
 } from "../controllers/games.controllers.js";
 
 const router = Router();
@@ -23,6 +23,8 @@ router.post("/games/:title", updateOne);
 
 // Ruta para eliminar un juego por su título
 router.get("/games/delete/:title", deleteOne);
+
+router.get("/games/happy/:title" , final);
 
 
 
