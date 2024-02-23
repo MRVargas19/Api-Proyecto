@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <title>Felicidades por tu Compra</title>
     <style>
         body {
@@ -11,10 +14,6 @@
             text-align: center;
             padding: 20px;
             margin: 0;
-        }
-
-        h1 {
-            color: #6408c5;
         }
 
         p {
@@ -38,7 +37,17 @@
 </head>
 <body>
     <div class="container">
-        <h1>Felicidades por tu Compra</h1>
+        <div data-role="header" style="background-color: blueviolet; color: rgb(205, 205, 205);">
+            <h1>Compra</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="home" style="background-color: #9405aa; color: #fff;">Inicio</a></li>
+                <li><a href="#" data-icon="tag" class="ui-btn-active" style="background-color: #9405aa; color: #fff;">Juegos</a></li>
+                <li><a href="#" data-icon="user" style="background-color: #9405aa; color: #fff;">Usuarios</a></li>
+            </ul>
+        </div>
+        <H1 style="color: #9405aa;">Felicidades por tu compra</H1>
         <h2 style="color: blueviolet;"><%= game.title %></h2>
         <p>¡Gracias por adquirir el juego! Esperamos que lo disfrutes al máximo.</p>
         <img src="https://cdn-products.eneba.com/resized-products/VsRRqnxJZKEwXL5lje5YfbSMzjb0XoguoLghQQn8kwg_350x200_1x-0.jpeg" alt="Felicidades">

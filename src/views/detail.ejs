@@ -14,6 +14,13 @@
         <div data-role="header" style="background-color: blueviolet; color: aliceblue;">
             <h1>Detalle del Juego</h1>
         </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-icon="home" style="background-color: #9405aa; color: #fff;">Inicio</a></li>
+                <li><a href="#" data-icon="tag" class="ui-btn-active" style="background-color: #9405aa; color: #fff;">Juegos</a></li>
+                <li><a href="#" data-icon="user" style="background-color: #9405aa; color: #fff;">Usuarios</a></li>
+            </ul>
+        </div>
 
         <div data-role="content">
             <div class="game-container" style="line-height: 10vh; text-align: center;">
@@ -51,7 +58,7 @@
             <label for="number_stock">Existencia:</label>
             <input type="number" name="stock" id="number_stock" placeholder="Existencia" value="<%= game.stock %>">
 
-            <button type="submit">Guardar</button>
+            <button type="submit" style="background-color: blueviolet; color: aliceblue;">Guardar</button>
         </form>
 
         <div data-role="footer" style="background-color: blueviolet; color: aliceblue;">
